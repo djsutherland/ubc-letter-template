@@ -1,9 +1,9 @@
-.PHONY: all clean
+.PHONY: all clean FORCE_MAKE
 
 all: letter.pdf
 
-%.pdf: %.tex defs.tex address.tex signature.pdf ubc-letter-defs.tex ubc-letter-template.tex ubc-logo-2018-fullsig-blue-cmyk.pdf
-	latexmk -pdf $<
+%.pdf: %.tex FORCE_MAKE
+	latexmk -pdf -dvi- -ps- $<
 
 clean:
 	latexmk -C
