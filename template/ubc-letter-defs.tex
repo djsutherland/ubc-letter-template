@@ -39,7 +39,34 @@
 %% Now actually use the newly defined style.
 \urlstyle{vtt}
 
-\newcommand{\myopening}{To Whom It May Concern:}
-\newcommand{\myclosing}{Sincerely,}
 
-\input{template/defs}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{empty}{\fancyhf{}\fancyhead[L]{%
+   \printlogo%
+   \\[24pt]
+   \runonfontsz{10pt}%
+   \textbf{\mytitle\myname} \\[1pt]
+   \myaffil \\[2pt]
+   \mymail \\[2pt]
+   \myhomepage
+}}
+\fancypagestyle{plain}{\fancyhf{}\fancyhead[L]{}}
+
+% Correct head height that somehow gets broken by fancyhdr
+\afterpage{\global\setlength{\headheight}{0pt}
+%  \global\setlength{\topmargin}{-3cm}
+  \global\addtolength{\textheight}{80pt}
+}
+%\addtolength{\textheight}{80pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\evensidemargin}{0in}
+\setlength{\oddsidemargin}{0in}
+
+\input{template/address.tex}
+
+\signature{
+\vspace*{-35pt}
+\hspace{3pt}\protect\includegraphics{template/signature.pdf}
+\\
+\myname\\[0.5ex]
+}

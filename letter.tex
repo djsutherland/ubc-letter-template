@@ -1,14 +1,14 @@
 \documentclass[10pt,letter]{letter}
 
-% Must be loaded first.
-\input{template/ubc-letter-defs}
-
-%% Edit below here.
+\input{template/ubc-letter-defs} % general setup
+\input{template/defs} % info about me, common to multiple letters
 
 \newcommand{\studentname}{A really cool student}
 
-% Put main body here.
-\newcommand{\body}{
+\begin{document}
+\begin{letter}{\textbf{Subject:} Letter of Recommendation for \textbf{\studentname}}
+\opening{To Whom It May Concern:}
+
 I am writing to recommend A really cool student for something.
 They are super cool and you should give them the thing.
 
@@ -18,7 +18,9 @@ An inspiring story about A really cool student exists, and convinced you of the
 above premise.
 
 I really recommend A really cool student.
-}
 
-% Must be loaded last.
-\input{template/ubc-letter-template}
+
+\closing{~\\[2ex] Sincerely,}
+\vfill
+\end{letter}
+\end{document}
